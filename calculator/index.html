@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Calculator mamalonei</title>
+    <meta name="description" content="website to use a mamalonei calculator" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <form>
+          <div class="display">
+            <!-- si quiere restringir el input solo agregar el atributo "disable" por motivos de loles no lo pondremos hoy-->
+            <!-- en caso de ser contraseña para que siga el formato del pattern usar oninvalid="this.setCustomValidity('ERROR_TEXT')" -->
+            <input type="text" name="display" id="result" disabled />
+          </div>
+          <div name="line1">
+            <input type="button" value="%" onclick="dis('%')" class="row1" />
+            <input
+              type="button"
+              value="DEL"
+              onclick="display.value = display.value.toString().slice(0, -1) "
+              class="row1"
+            />
+            <input type="button" value="AC" onclick="clr()" class="row1" />
+            <input type="button" value="/" onclick="dis('/')" class="row1" />
+          </div>
+          <div name="line2">
+            <input type="button" value="7" onclick="dis('7')" />
+            <input type="button" value="8" onclick="dis('8')" />
+            <input type="button" value="9" onclick="dis('9')" />
+            <input type="button" value="*" onclick="dis('*')" />
+          </div>
+          <div name="line3">
+            <input type="button" value="4" onclick="dis('4')" />
+            <input type="button" value="5" onclick="dis('5')" />
+            <input type="button" value="6" onclick="dis('6')" />
+            <input type="button" value="-" onclick="dis('-')" />
+          </div>
+          <div name="line4">
+            <input type="button" value="1" onclick="dis('1')" />
+            <input type="button" value="2" onclick="dis('2')" />
+            <input type="button" value="3" onclick="dis('3')" />
+            <input type="button" value="+" onclick="dis('+')" />
+          </div>
+          <div name="line5">
+            <input type="button" value="0" class="zero" onclick="dis('0')" />
+            <input type="button" value="." onclick="dis('.')" />
+            <input
+              type="button"
+              class="equal"
+              value="="
+              onclick="solve()"
+              id="solveBtn"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="syntax.js"></script>
+  </body>
+</html>
